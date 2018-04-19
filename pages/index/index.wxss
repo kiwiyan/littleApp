@@ -1,0 +1,45 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+
+
+.todolists {
+  width: 100%;
+  border: 1rpx solid #999;
+}
+.todolists button {
+  /* display: inline-block; */
+}
+.todo-wrap .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10rpx 0;
+  padding: 10rpx 10rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.todolists .add-btn {
+  margin: 20rpx 30rpx;
+}
+.todolists .el-input {
+  height: 80rpx;
+}
+.todo-wrap .item button {
+  margin: 0 5px;
+}

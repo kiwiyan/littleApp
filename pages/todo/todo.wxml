@@ -1,0 +1,15 @@
+<view class="todolists">
+  <view>
+    <input class="el-input" type="text" value="{{inputValue}}" bindinput="bindKeyInput" cursor="" placeholder="新添加内容" auto-focus/>
+    <button class="add-btn" type="primary" bindtap="addTodo">add</button>
+    <text selectable="true">正在输入：{{inputValue}}</text>
+  </view>
+  <view class="todo-wrap">
+    <view wx:for="{{todolists}}" wx:key="unique" class="item">
+      <text >{{index}}、{{item.value}}</text>
+      
+      <button size="mini" bindtap="deleteTodo" data-index="{{index}}">delete</button>
+    </view>
+  </view>
+
+</view>

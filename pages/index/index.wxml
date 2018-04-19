@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <button type="primary" bindtap="clickMe">primary</button>
+      <view wx:if="{{isShow}}">lalala</view>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+
+  <view class="todolists">
+    <view>
+      <input class="el-input" type="text" value="{{inputValue}}" bindinput="bindKeyInput" cursor="" placeholder="新添加内容" auto-focus/>
+      <button class="add-btn" type="primary" bindtap="addTodo">add</button>
+      <text selectable="true">正在输入：{{inputValue}}</text>
+    </view>
+    <view class="todo-wrap">
+      <view wx:for="{{todolists}}" wx:key="unique" class="item">
+        <text >{{index}}、{{item.value}}</text>
+        
+        <button size="mini" bindtap="deleteTodo" data-index="{{index}}">delete</button>
+      </view>
+    </view>
+
+  </view>
+  <button type="primary" bindtap="showDialog">自定义弹窗</button>
+  <view class="container">
+    <dialog id='dialog' 
+      title='我是标题' 
+      content='恭喜你，学会了小程序组件' 
+      cancelText='知道了' 
+      confirm='谢谢你'
+      bind:cancelEvent="_cancelEvent"  
+      bind:confirmEvent="_confirmEvent">
+    </dialog>
+    
+</view>
+
+</view>
